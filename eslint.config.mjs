@@ -1,6 +1,7 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
+import { rules } from "eslint-plugin-react/configs/all";
 
 
 export default [
@@ -9,5 +10,6 @@ export default [
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   pluginReactConfig,
-  {extends:['eslint:recommended','plugin:react/recomended','plugin:react/jsx-runtime']}
+  {extends:['eslint:recommended','plugin:react/recomended','plugin:react/jsx-runtime',"plugin:react-hooks/recommended"]},
+  {rules:{"no-console":"warn"}}
 ];
